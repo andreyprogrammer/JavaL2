@@ -1,3 +1,5 @@
+package lesson_1;
+
 public class Team {
     Human human;
     Cat cat;

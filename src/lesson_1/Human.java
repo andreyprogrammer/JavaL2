@@ -1,3 +1,5 @@
+package lesson_1;
+
 public class Human {
     private int lengthMax = 500;
     private int heightMax = 2;

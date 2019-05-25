@@ -1,3 +1,5 @@
+package lesson_1;
+
 public class Robot {
     private int lengthMax = 3000;
     private int heightMax = 1;

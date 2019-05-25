@@ -1,3 +1,5 @@
+package lesson_1;
+
 public class MainClass {
     public static void main(String[] args) {
         Human human = new Human("Вася");

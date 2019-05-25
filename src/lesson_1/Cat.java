@@ -1,3 +1,5 @@
+package lesson_1;
+
 public class Cat {
     private int lengthMax = 50;
     private int heightMax = 3;
