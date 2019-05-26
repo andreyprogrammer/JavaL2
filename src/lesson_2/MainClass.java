@@ -12,25 +12,34 @@ public class MainClass {
 
         arr[2][2] = "a";
 
-//        for (int i = 0; i < arr1.length; i++) {
-//            for (int j = 0; j < arr1[0].length; j++) {
-//                System.out.print(arr1[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
-
-        System.out.println(sumArr(arr));
-
-
+        try {
+            System.out.println(sumArr(arr));
+        } catch (MyArraySizeException e1) {
+            System.out.println(e1.getMessage());
+        } catch (MyArrayDataException e2) {
+            System.out.println(e2.getMessage());
+        }
     }
 
-    static int sumArr(String a[][]) {
+    static int sumArr(String ar[][]) throws MyArraySizeException, MyArrayDataException {
+        if (ar.length != 4 || ar[0].length != 4) {
+            throw new MyArraySizeException("Размерность массива не соответствует 4х4");
+        }
 
         int result = 0;
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a[0].length; j++) {
-                result += Integer.parseInt(a[i][j]);
+        int a = -1;
+        int b = -1;
+
+        try {
+            for (int i = 0; i < ar.length; i++) {
+                for (int j = 0; j < ar[0].length; j++) {
+                    a = i;
+                    b = j;
+                    result += Integer.parseInt(ar[i][j]);
+                }
             }
+        } catch (NumberFormatException e) {
+            throw new MyArraySizeException("В ячейке [" + a + "][" + b + "] несоответствующий тип данных");
         }
         return result;
     }
